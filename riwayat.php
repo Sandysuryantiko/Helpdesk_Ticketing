@@ -308,4 +308,4 @@ $list_divisi = mysqli_query($conn, "SELECT DISTINCT divisi FROM users WHERE divi
     });
 </script>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
