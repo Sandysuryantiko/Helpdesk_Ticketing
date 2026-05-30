@@ -36,16 +36,19 @@ $s2 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as t FROM tickets 
 $s3 = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as t FROM tickets WHERE status='selesai'"))['t'];
 ?>
 
-<!-- Hero Banner -->
-<div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[2rem] p-8 mb-8 text-white shadow-xl shadow-indigo-200 relative overflow-hidden">
-    <div class="relative z-10">
-        <h2 class="text-2xl font-bold mb-2">Halo, <?= $_SESSION['username'] ?>! 👋</h2>
-        <p class="text-indigo-100 text-sm max-w-md">
-            Selamat datang di SmartHelp. Klik tombol <b>"Buat Request"</b> untuk melaporkan kendala IT Anda, atau cek status perbaikan pada tabel di bawah.
-        </p>
+
+<?php if ($_SESSION['role'] == 'user') : ?>
+    <!-- Hero Banner -->
+    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[2rem] p-8 mb-8 text-white shadow-xl shadow-indigo-200 relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="text-2xl font-bold mb-2">Halo, <?= $_SESSION['username'] ?>! 👋</h2>
+            <p class="text-indigo-100 text-sm max-w-md">
+                Selamat datang di SmartHelp. Klik tombol <b>"Buat Request"</b> untuk melaporkan kendala IT Anda, atau cek status perbaikan pada tabel di bawah.
+            </p>
+        </div>
+        <i class="fas fa-rocket absolute -right-4 -bottom-4 text-8xl text-white/10 -rotate-12"></i>
     </div>
-    <i class="fas fa-rocket absolute -right-4 -bottom-4 text-8xl text-white/10 -rotate-12"></i>
-</div>
+<?php endif; ?>
 
 <!-- Header Dashboard -->
 <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">

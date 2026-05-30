@@ -126,4 +126,4 @@ $divisi_user = isset($_SESSION['divisi']) ? $_SESSION['divisi'] : 'Umum';
     });
 </script>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
